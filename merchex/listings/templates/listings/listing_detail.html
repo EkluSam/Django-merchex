@@ -1,0 +1,16 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+<h2>{{ listing.title }}</h2>
+<p>{{ listing.description }}</p>
+<ul>
+    <li>Type de billet : {{ listing.type }} </li>
+    <li>Année de vente : {{ listing.year }}</li>
+    <li>Vendu : {{ listing.sold|yesno }}</li>
+</ul>
+
+<p>Ce billet est uniquement valable pour le groupe : <a href="{% url 'band-detail' listing.band.id %}">{{ listing.band }}</a></p>
+
+<a href="{% url 'listing-change' listing.id %}">[Modifer cette annonce]</a>
+<a href="{% url 'listing-delete' listing.id %}">[Supprimer cette annonce]</a>
+<a href="{% url 'listing-list' %}">[Retour à toutes les annonces]</a>
+{% endblock %}

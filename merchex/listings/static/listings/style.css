@@ -1,0 +1,7 @@
+* {background: rgb(255, 180, 82)}
+
+body a {
+    font-style: italic;
+    text-decoration: none;
+    color: blue;
+}
